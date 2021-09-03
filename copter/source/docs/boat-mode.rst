@@ -1,27 +1,26 @@
 .. _boat-mode:
 
 =========
-Boat Mode
+船上模式
 =========
 
-Copter includes "boat mode" which allows taking off from a moving platform including boats.  It is not really a "mode" but rather a change to how the gyros are calibrated.
+旋翼无人机固件包含一个可以从移动平台上起飞的“船上模式” 。它并不真的是一个“模式”，而是一种不同的陀螺仪校准方式。
 
 ..  youtube:: wNlnwqC-bx4
     :width: 100%
 
-Settings
+设置
 ========
 
-In many cases Copter will be able to take off from a moving platform without any special parameter changes as long as the platform is not moving too rapidly during the gyro calibration which occurs a few seconds after startup (look for the LEDs flashing red and blue).
+在多数情况下无人机能够在不特意修改任何参数的情况下从移动平台上起飞，前提是该平台在无人机通电后执行陀螺仪自动校准的几秒钟内（led灯红蓝闪烁）不发生剧烈晃动。
 
-If the platform is moving too much however, the gyro calibration will fail after 30 seconds and gyro related warnings like "Bad Gyro Health" will appear on the HUD.  Despite this warning the vehicle may fly normally but having the warning is unnerving and may hide other errors.  In this case, it is best to disable the automatic gyro calibration by setting the :ref:`INS_GYR_CAL <INS_GYR_CAL>` parameter to "0".
+然而，如果平台晃动比较强烈，陀螺仪自动校准会在30秒后失败，并在地面站显示"Bad Gyro Health"之类的警告。尽管有警告情况下无人机仍可正常飞行，但此警告不仅使人不安，还可能掩盖其他的错误。因此，最好通过设置 :ref:`INS_GYR_CAL <INS_GYR_CAL>` 参数为 "0" 来禁止陀螺仪自动校准。
 
-Manually trigger gyro calibration
+手动触发陀螺仪校准
 =================================
 
-Note that even with automatic gyro calibration disabled, the gyros calibration can be triggered manually from the Mission Planner (and perhaps some other ground stations) using the Flight Data screen's Actions tab.  Select "PREFLIGHT_CALIBRATION" from the top-left drop-down and then press the "Do Action" button.
-
+注意，即使陀螺仪自动校准被禁止，你仍然能通过Mission Planner（或其他地面站）的飞行数据界面上的操作选项来手动触发陀螺仪校准。在左上角的下拉菜单里选中 "PREFLIGHT_CALIBRATION" 并点击 "Do Action" 选项。
 .. image:: ../images/boat-mode-gyro-calibration.png
     :target: ../_images/boat-mode-gyro-calibration.png
 
-This is useful if for some reason a gyro calibration is required and the vehicle can be temporarily placed on a near non-moving platform.
+这在某些陀螺仪必需校准，并且无人机能够临时放置在一个接近静止的平台上的情况下是有用的。
